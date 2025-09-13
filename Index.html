@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Web Experience</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header with Theme Toggle -->
+    <header class="header">
+        <div class="container">
+            <h1>🚀 Interactive Web Experience</h1>
+            <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+                <span class="theme-icon">🌙</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Part 1: Event Handling Demo -->
+        <section class="section">
+            <h2>🎉 Event Handling Playground</h2>
+            <div class="event-demo">
+                <div class="demo-grid">
+                    <div class="demo-card" id="clickDemo">
+                        <h3>Click Events</h3>
+                        <button id="clickBtn" class="btn btn-primary">Click Me!</button>
+                        <p id="clickCount">Clicks: 0</p>
+                    </div>
+                    
+                    <div class="demo-card" id="hoverDemo">
+                        <h3>Hover Effects</h3>
+                        <div id="hoverBox" class="hover-box">Hover over me!</div>
+                        <p id="hoverStatus">Status: Ready</p>
+                    </div>
+                    
+                    <div class="demo-card" id="keyDemo">
+                        <h3>Keyboard Input</h3>
+                        <input type="text" id="keyInput" placeholder="Type something...">
+                        <p id="keyOutput">You typed: </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 2: Interactive Elements -->
+        <section class="section">
+            <h2>🎮 Interactive Components</h2>
+            
+            <!-- Counter Game -->
+            <div class="interactive-component">
+                <h3>🎯 Counter Challenge</h3>
+                <div class="counter-game">
+                    <div class="counter-display">
+                        <span id="counterValue">0</span>
+                    </div>
+                    <div class="counter-controls">
+                        <button id="decrementBtn" class="btn btn-danger">-</button>
+                        <button id="resetBtn" class="btn btn-secondary">Reset</button>
+                        <button id="incrementBtn" class="btn btn-success">+</button>
+                    </div>
+                    <div class="counter-stats">
+                        <p>Goal: Reach 10! | Current: <span id="counterProgress">0%</span></p>
+                        <div class="progress-bar">
+                            <div id="progressFill" class="progress-fill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Collapsible FAQ -->
+            <div class="interactive-component">
+                <h3>❓ Frequently Asked Questions</h3>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question" data-faq="1">
+                            What is JavaScript? <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer" id="faq-1">
+                            <p>JavaScript is a programming language that enables interactive web pages and is an essential part of web applications.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" data-faq="2">
+                            How do event listeners work? <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer" id="faq-2">
+                            <p>Event listeners are functions that wait for specific events (like clicks or key presses) to occur and then execute code in response.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" data-faq="3">
+                            What is DOM manipulation? <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer" id="faq-3">
+                            <p>DOM manipulation refers to changing the structure, style, or content of web pages dynamically using JavaScript.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabbed Interface -->
+            <div class="interactive-component">
+                <h3>📑 Tabbed Content</h3>
+                <div class="tabs-container">
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" data-tab="html">HTML</button>
+                        <button class="tab-btn" data-tab="css">CSS</button>
+                        <button class="tab-btn" data-tab="js">JavaScript</button>
+                    </div>
+                    <div class="tab-content">
+                        <div id="tab-html" class="tab-panel active">
+                            <h4>🏗️ HTML - Structure</h4>
+                            <p>HTML provides the basic structure and content of web pages using elements and tags.</p>
+                            <code><div class="example">Hello World</div></code>
+                        </div>
+                        <div id="tab-css" class="tab-panel">
+                            <h4>🎨 CSS - Styling</h4>
+                            <p>CSS controls the visual presentation, layout, and design of HTML elements.</p>
+                            <code>.example { color: blue; font-size: 16px; }</code>
+                        </div>
+                        <div id="tab-js" class="tab-panel">
+                            <h4>⚡ JavaScript - Interactivity</h4>
+                            <p>JavaScript adds dynamic behavior and interactivity to web pages.</p>
+                            <code>document.querySelector('.example').addEventListener('click', handler);</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 3: Form Validation -->
+        <section class="section">
+            <h2>📋 Smart Form Validation</h2>
+            <div class="form-container">
+                <form id="registrationForm" class="registration-form" novalidate>
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                        <div class="error-message" id="fullNameError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                        <div class="error-message" id="emailError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                        <div class="error-message" id="phoneError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password *</label>
+                        <input type="password" id="password" name="password" required>
+                        <div class="password-strength" id="passwordStrength"></div>
+                        <div class="error-message" id="passwordError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password *</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        <div class="error-message" id="confirmPasswordError"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="birthDate">Birth Date</label>
+                        <input type="date" id="birthDate" name="birthDate">
+                        <div class="error-message" id="birthDateError"></div>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <span class="checkmark"></span>
+                            I agree to the Terms and Conditions *
+                        </label>
+                        <div class="error-message" id="termsError"></div>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <span class="checkmark"></span>
+                            Subscribe to our newsletter
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large">Create Account</button>
+                </form>
+
+                <!-- Success Message -->
+                <div id="successMessage" class="success-message hidden">
+                    <h3>🎉 Registration Successful!</h3>
+                    <p>Welcome aboard! Your account has been created successfully.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Interactive Web Experience. Built with ❤️ and JavaScript.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
